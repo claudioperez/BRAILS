@@ -125,7 +125,6 @@ class ImageClassifier:
             for img, pred, prob in zip(imagePathList, predictions, probs): 
                 print("Image :  {}     Class : {} ({}%)".format(img, pred, str(round(prob*100,2)))) 
         df = pd.DataFrame(list(zip(imagePathList, predictions, probs)), columns =['image', 'prediction', 'probability'])
-        print(df)
         df.to_csv(self.resultFile, index=False)
         print('Results written in file {}'.format(self.resultFile))
 
